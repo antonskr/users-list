@@ -28,14 +28,14 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.resolve(__dirname, 'dist'), // директория для сервера
+      directory: path.resolve(__dirname, 'dist'),
     },
     compress: true,
     port: 9000,
     open: true,
   },
-  mode: 'development', // режим разработки
+  mode: 'development',
   resolve: {
-    extensions: ['.js'], // поддержка импортов без расширений
+    extensions: ['.js'],
   },
 };
