@@ -1,0 +1,23 @@
+@mixin hover($pointer) {
+  @media only screen and (hover: hover) and (pointer: $pointer) {
+    @content;
+  }
+}
+
+$breakpoints: (
+  "xl": 1920,
+  "lg": 1440,
+  "pc": 1280,
+  "lg-tab": 1024,
+  "sm-tab": 768,
+  "mob": 414,
+  "sm-mob": 375,
+  "xs-mob": 320,
+);
+
+
+@mixin minw($media) {
+  @media only screen and (min-width: $media) {
+    @content;
+  }
+}

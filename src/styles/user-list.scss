@@ -1,0 +1,107 @@
+@import 'mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Контейнер для карточек */
+#users-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Адаптивная сетка */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Стили карточки пользователя */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Плавная тень */
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Анимация */
+
+    &__label {
+        font-weight: bold;
+        color: #555;
+    }
+
+    &__name {
+        color: #2c3e50;
+    }
+
+    &__email {
+        color: #3498db;
+    }
+
+    &__phone {
+        color: #e67e22;
+    }
+
+    &__city {
+        color: #2ecc71;
+    }
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Плавное поднятие карточки при наведении */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Увеличение тени при наведении */
+}
+
+.card > div {
+    margin-bottom: 10px;
+}
+
+.card div:last-child {
+    margin-bottom: 0;
+}
+
+#filter-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 0 auto 20px auto;
+    display: block;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+#filter-input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+@include minw('sm-tab') {
+    #users-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Больше пространства на больших экранах */
+    }
+
+    .card {
+        padding: 30px;
+    }
+
+    #filter-input {
+        max-width: 600px;
+    }
+}
